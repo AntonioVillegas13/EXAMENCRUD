@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="secondary">
+      <ion-title>Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div *ngIf="registro">
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input [(ngModel)]="registro.name"></ion-input>
+        <ion-label position="stacked">Apellido</ion-label>
+        <ion-input [(ngModel)]="registro.lastname"></ion-input>
+        <ion-label position="stacked">Cedula</ion-label>
+        <ion-input [(ngModel)]="registro.idCard"></ion-input>
+        <ion-label position="stacked">Horario</ion-label>
+        <ion-input [(ngModel)]="registro.schedule"></ion-input>
+      </ion-item>
+  
+   
+    </div>
+  
+    <ion-button expand="block" color="success" (click)="updateNote()">
+      <ion-icon name="save" slot="start"></ion-icon>
+      ACTUALIZAR
+    </ion-button>
+    <ion-button expand="block" color="danger" (click)="deleteNote()">
+      <ion-icon name="trash" slot="start"></ion-icon>
+      ELIMINAR
+    </ion-button>
+  
+  </ion-content>

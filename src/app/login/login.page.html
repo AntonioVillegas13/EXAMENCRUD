@@ -1,0 +1,25 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>CRUD CON FIREBASE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-title>EXAMEN BIMESTRAL - APLICACIONES MOVILES</ion-title>
+  <ion-img src="https://d2lcsjo4hzzyvz.cloudfront.net/blog/wp-content/uploads/2022/05/13100505/Por-que%CC%81-ofrecer-citas-me%CC%81dicas-virtuales-a-tus-pacientes-.jpg" class="ion-margin-vertical" alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+  <form [formGroup]="credentials" (ngSubmit)="login()">
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+      <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Correo no valido</ion-note>
+    </ion-item>
+
+    <ion-item fill="solid" class="ion-margin-bottom">
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">La contraseña debe tener mas de 6 caracteres</ion-note>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" [disabled]="!credentials.valid">Login</ion-button>
+    <ion-button expand="full" type="button" (click)="register()">Create account</ion-button>
+  </form>
+</ion-content>
